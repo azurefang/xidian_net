@@ -11,8 +11,8 @@ xidian = 'http://10.255.44.33/cgi-bin/srun_portal'
 
 def login():
     action = 'login'
-    username = '03111181'
-    password = 'peter1994'
+    username = '学号'
+    password = '密码'
     ac_id = 6
     type = 1
 

@@ -1,18 +1,22 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
 # coding:utf-8
 
 import pickle
 import requests
+import os.path
+
+home = os.path.expanduser('~')
+config = os.path.join(home, '.xidian')
 try:
-    f = open('info', 'r')
+    f = open(config, 'r')
 except IOError:
-    f = open('info', 'w')
+    f = open(config, 'w')
     f.close()
 xidian = 'http://10.255.44.33/cgi-bin/srun_portal'
 info_site = 'http://10.255.44.33/cgi-bin/rad_user_info'
 def login():
     action = 'login'
-    with open('info', 'rb+') as f:
+    with open(config, 'rb+') as f:
         try:
             account = pickle.load(f)
             username = account["username"]
